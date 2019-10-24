@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<style type="text/css">
+	.mail-info{
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+	}
+	.mail-title{
+		margin: 10px 0;
+	}
+</style>
+</head>
+<body>
+    <h2><b>The ekyc-service status is <span style = "color:red" th:text="${form.status}"></span></b></h2>
+	<div class="mail-title"><b>The ekyc-service mail server health info:</b></div>
+	<p class="mail-info">status is <span th:text="${form.mailStatus}"></span></p>
+	<p class="mail-info">location is <span th:text="${form.mailLocation}"></span></p>
+    <p class="mail-info">error info is <span th:text="${form.mailError}"></span></p>
+	<div class="mail-title"><b>The ekyc-service diskSpace health info:</b></div>
+    <p class="mail-info">status is <span th:text="${form.diskSpaceStatus}"></span></p>
+	<p class="mail-info">total is <span th:text="${form.diskSpaceTotal}"></span>M</p>
+	<p class="mail-info">free is <span th:text="${form.diskSpaceFree}"></span>M</p>
+	<p class="mail-info">threshold is <span th:text="${form.diskSpaceThreshold}"></span>M</p>
+	<p class="mail-info">Regards,</p>
+	<p class="mail-info">Sent from eKYC monitor application.</p>
+</body>
+</html>

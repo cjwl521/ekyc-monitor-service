@@ -1,0 +1,33 @@
+# from application-dit.yml
+server:
+  port: 8082
+  context-path: /ekyc-monitor-service
+spring:
+  mail:
+    host: smtp.163.com
+    username: 18502946068@163.com
+    password: 891125cjwl
+    default-encoding: UTF-8
+  thymeleaf:
+    prefix: classpath:/templates/mail/
+    suffix: .html
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+    content-type: text/html; charset=utf-8
+    enabled: true
+    
+hsbc:
+  mail:
+    reciever: 378872502@qq.com
+    ekycStatusSubject: The ekyc-service status is down test!
+    ekycNetworkSubject: The ekyc-service network is abnormal test!
+    url: http://localhost:8082/ekyc-monitor-service/health/test
+    cron: 0/120 * * * * ?
+logging:
+  file: applogs/ekyc-monitor-service.txt
+  level:
+    root: info
+management:
+  security:
+    enabled: false

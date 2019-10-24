@@ -1,0 +1,39 @@
+server:
+  port: 8082
+  context-path: /ekyc-monitor-service
+spring:
+  mail:
+    host: email-smtp.us-east-1.amazonaws.com
+    port: 465
+    protocol: smtps
+    username: AKIAJ6SP567RVAJJEJ2A
+    password: AkCYJ0UdyOG9vAgERSrqnV7rBlnRGSS9DcEzZ8C87zeO
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.transport.protocol: smtps
+  thymeleaf:
+    prefix: classpath:/templates/mail/
+    suffix: .html
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+    content-type: text/html; charset=utf-8
+    enabled: true
+    
+hsbc:
+  mail:
+    reciever: changxiaohui@chinasofti.com
+    sender: cxh01987@163.com
+    ekycStatusSubject: The ekyc-service status is down!
+    ekycNetworkSubject: The ekyc-service network is abnormal!
+    url: http://localhost:8081/ekyc-service/health
+    cron: 0/120 * * * * ?
+logging:
+  file: applogs/ekyc-monitor-service.txt
+  level:
+    root: info
+management:
+  security:
+    enabled: false
